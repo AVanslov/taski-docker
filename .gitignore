@@ -129,3 +129,7 @@ dmypy.json
 .pyre/
 
 frontend/node_modules
+
+# Others
+node_modules
+docker-compose.yml
