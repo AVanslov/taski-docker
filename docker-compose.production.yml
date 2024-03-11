@@ -2,12 +2,12 @@
 version: '3'
 
 volumes:
-  pg_data:
-  static:
+  pg_data_production:
+  static_volume:
 
 services:
   db:
-    image: postgres:13
+    image: postgres:13.10
     env_file: .env
     volumes:
       - pg_data:/var/lib/postgresql/data
@@ -25,7 +25,7 @@ services:
     volumes:
       - static_volume:/frontend_static.env
   gateway:
-    image: avanslov/taski_gateway  # Качаем с Docker Hub
+    image: avanslov/taski_gateway
     env_file: .env
     ports:
       - 8000:80
